@@ -1,0 +1,149 @@
+html {
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-bg: #1a1a1a;
+    --accent-color: #8b0000;
+    --text-color: #e0e0e0;
+    --aside-bg: #333333;
+    --font-primary: 'Arial', sans-serif;
+    --font-title: 'Creepster', cursive;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: var(--font-primary);
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+
+header h1 {
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-title);
+    font-size: 4.8rem;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    padding: 2rem 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 0;
+}
+
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+
+section {
+    flex: 2;
+    min-width: 300px;
+}
+
+article {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+article:hover{
+    transform: scale(0.95);
+}
+
+article h2 {
+    font-family: var(--font-title);
+    color: var(--accent-color);
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+article p {
+    margin: 0;
+}
+
+
+aside {
+    flex: 1;
+    min-width: 250px;
+    background-color: var(--aside-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+aside h2 {
+    font-family: var(--font-title);
+    color: var(--accent-color);
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside li {
+    margin-bottom: 1rem;
+}
+
+aside li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+aside li a:hover {
+    color: var(--accent-color);
+}
+
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--text-color);
+    font-size: 1.4rem;
+    margin-top: 2rem;
+}
+
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    aside {
+        justify-content: center;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 3.6rem;
+    }
+
+    article h2 {
+        font-size: 2.4rem;
+    }
+
+    aside h2 {
+        font-size: 2rem;
+    }
+}

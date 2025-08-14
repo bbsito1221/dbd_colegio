@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+*/
+
+/*
+  font-family: "Noto Sans Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+*/
+
+/*
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+*/
+/*
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+
+    
+}
+:root{
+  --fondo: radial-gradient(circle at center, 
+    #4d0000 0%,       
+    #1a0000 40%,       
+    #000000 100%);
+  --fondo_nav: linear-gradient(to bottom, 
+    #000000 0%,       /* negro arriba */
+    #1a0000 25%,       /* negro con un leve rojo */
+    #4d0000 50%,       /* rojo sangre oscuro */
+    #1a0000 75%,       /* vuelve al oscuro */
+    #000000 100%       /* negro abajo */
+  );
+}
+
+body{
+    background: var(--fondo);
+
+}
+.header{
+    position: relative;
+    height: 80px;
+    background: var(--fondo_nav);
+  
+}
+.header .navbar{
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 2rem;
+    margin: 0 auto;
+    width: min(1200px, 100%);
+    z-index: 10;
+    
+}
+.icons{
+    color: white;
+    cursor: pointer;
+}
+.check_menu:checked + .ul_link{
+    height: calc(100vh - 80px);
+    
+}
+.logo{
+    background: url(../img/logo.png);
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: cover;
+}
+
+#check_menu{
+    display: none;
+}
+.ul_link{
+    position: absolute;
+    top: 80px;
+    height: calc(100vh - 80px);
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 6rem;
+    height: 0;
+    overflow: hidden;
+    left: 0;
+    transition: .3s;
+    list-style: none;
+}
+.link{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    transition: .7s;
+
+}
+
+/*main*/
+main{
+    position: relative;
+    height: 100%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    z-index: 2;
+
+}
+main .conteiner{
+
+    margin: 2rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero{
+    min-width: 300px;
+    max-width: 360px;
+    text-align: center;
+    margin: 1rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+    0 0 10px rgba(128, 0, 0, 0.4),   /* brillo suave rojo oscuro */
+    0 0 20px rgba(255, 0, 0, 0.2),   /* resplandor rojo más fuerte */
+    0 10px 30px rgba(255, 0, 0, 0.1); /* profundidad como sombra larga */
+    transition: box-shadow 0.3s ease;
+    transition: .3s;
+}
+.hero:hover {
+  transform: scale(.9);
+  box-shadow:
+    0 0 15px rgba(255, 0, 0, 0.6),
+    0 0 30px rgba(255, 0, 0, 0.4),
+    0 15px 40px rgba(255, 0, 0, 0.2);
+}
+.hero .img{
+    width: 100%;
+    height: 12rem;
+    background-image: url(../img/1b4a39c3d24c343f0247362538e3f755.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+}
+#img1{
+  background-image: url(../img/01-the-last-breath-key-art.webp);
+  
+}
+
+.hero a, h2{
+    color: rgb(255, 0, 0);
+    width: fit-content;
+    margin: 0 auto;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+.hero a:hover{
+    text-decoration: underline;
+}
+
+.content{
+    font-family: "Noto Sans Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    flex-direction: column;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    padding: 0 10px 10px 10px;
+    background-color: black;
+}
+
+.content p{
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+
+}
+
+.cabecera{
+    background-color: #4d0000;
+    width: 100%;
+    height: 600px;
+    background: url(../img/101010.jpg);
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.cabecera .sombra{
+    background-color: rgb(0, 0, 0,.4);
+    position: absolute;
+    inset: 0;
+}
+.cabecera .sombra .sombrax2{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%; /* Puedes ajustar según lo que necesites */
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 1));
+}
+.cabecera .sombra .texto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transition: .3s;
+}
+
+.cabecera .sombra .texto a{
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 4px;
+    font-size: 3rem;
+    max-width: 200px;
+    line-height: .9;
+    transition: .3s;
+    text-decoration: none;
+    
+}
+.cabecera > .sombra > .texto > a:hover{
+  transform: scale(1.1);
+  transition: 2s;
+  color: #920000;
+  cursor: pointer;
+
+}
+
+.cabecera .texto:hover{
+  background-color: #000000b4;
+  transition: 1s;
+
+
+}
+.cabecera .sombra .texto .logo{
+    transform: scale(2.3);
+}
+main .capa{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%; /* Puedes ajustar esto */
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+    pointer-events: none;
+    height: 100px;
+}
+.sombra1{
+      background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 40px;
+
+}
+.intro{
+
+    display: flex;
+    flex-direction: column;
+}
+.intro h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.7rem;
+
+
+}
+
+.intro img{
+   max-width: 360px;
+   margin: 0 auto;
+}
+.separacion{
+    /*
+    width: 90%;
+    margin: 2rem auto;
+    border: none;
+    border-top: 1px solid rgba(192, 192, 192, 0.5);  más sutil */
+
+    width: 90%;
+    margin: 2rem auto;
+    height: 1px;
+    background: linear-gradient(to right, transparent, silver, transparent);
+    border: none;
+}
+.intro p{
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    max-width: 400px;
+    padding: 1rem;
+    margin: 0 auto;
+}
+@media (max-width:450px){
+  .ul_link{
+      background: radial-gradient(circle at center, 
+        #4d0000 0%,        /* rojo sangre centro */
+        #1a0000 40%,        /* rojo oscuro */
+        #000000 100%        /* negro hacia los bordes */
+    );
+  }
+  .li_link{
+  background: linear-gradient(to bottom, #8b0000, #300000); /* Rojo sangre a oscuro */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  transition: all .4s ease;
+  }
+  .li_link:hover{
+      background: linear-gradient(to bottom, #c10000, #4a0000); /* Más brillante al hacer hover */
+  box-shadow: 0 6px 16px rgba(255, 0, 0, 0.5); /* Sombra con tinte rojo */
+  transform: scale(1.05); /* Efecto de agrandar ligeramente */
+  }
+}
+@media (min-width:450px){
+    .labe_menu{
+        display: none;
+    }
+    .ul_link{
+        position: static;
+        width: auto;
+        flex-direction: row;
+        height: auto;
+        gap: 1rem;
+    }
+
+    .link:hover{
+      color: red;
+    }
+
+
+}
+@media (min-width:900px){
+    .intro{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+    .intro .texto{
+        max-width: 400px;
+    }
+    .intro img{
+        margin: 0;
+        max-width: 500px;
+    }
+    .intro h2{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        font-size: 3rem;
+    }
+    .separacion{
+        display: none;
+    }
+
+}
+footer{
+  margin: 2rem auto;
+  width: fit-content;
+  font-size: 1.rem;
+
+}
