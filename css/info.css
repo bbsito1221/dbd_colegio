@@ -1,149 +1,155 @@
-html {
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+html,
+body {
     font-size: 62.5%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    height: 100%;
 }
 
 :root {
-    --primary-bg: #1a1a1a;
-    --accent-color: #8b0000;
-    --text-color: #e0e0e0;
-    --aside-bg: #333333;
-    --font-primary: 'Arial', sans-serif;
-    --font-title: 'Creepster', cursive;
+    --primary-bg: #000;
+    --secondary-bg: rgba(0, 0, 0, 0.85);
+    --accent-color: #ff0000;
+    --text-color: #f0f0f0;
+    --font-title: 'Bebas Neue', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+    --background: radial-gradient(circle at center,
+            #4d0000 0%,
+            #1a0000 40%,
+            #000000 100%);
 }
 
 body {
-    font-size: 1.6rem;
-    font-family: var(--font-primary);
-    background-color: var(--primary-bg);
+    font-family: var(--font-body);
+    background: url('../img/dead-by-daylight-the-shape-michael-myers-5swyixuezr5y3coe.jpg');
+    background-size: cover;
     color: var(--text-color);
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
-}
-
-
-header h1 {
     display: flex;
-    justify-content: center;
-    font-family: var(--font-title);
-    font-size: 4.8rem;
-    color: var(--accent-color);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    padding: 2rem 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    margin: 0;
+    flex-direction: column;
 }
 
-
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+.navbar {
+    background-color: var(--secondary-bg);
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    border-bottom: 2px solid var(--accent-color);
 }
 
-
-section {
-    flex: 2;
-    min-width: 300px;
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
-article {
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
-}
-article:hover{
-    transform: scale(0.95);
+.navbar .logo img {
+    height: 50px;
 }
 
-article h2 {
+.navbar .logo span {
     font-family: var(--font-title);
+    font-size: 3rem;
     color: var(--accent-color);
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
 }
 
-article p {
-    margin: 0;
-}
-
-
-aside {
-    flex: 1;
-    min-width: 250px;
-    background-color: var(--aside-bg);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-aside h2 {
-    font-family: var(--font-title);
-    color: var(--accent-color);
-    font-size: 2.4rem;
-    margin-bottom: 1.5rem;
-}
-
-aside ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-aside li {
-    margin-bottom: 1rem;
-}
-
-aside li a {
-    text-decoration: none;
+.navbar .nav-links a {
     color: var(--text-color);
-    font-weight: bold;
+    margin-left: 2rem;
+    font-size: 1.6rem;
+    text-decoration: none;
     transition: color 0.3s;
 }
 
-aside li a:hover {
+.navbar .nav-links a:hover {
     color: var(--accent-color);
 }
 
+main {
+    scrollbar-width: none;
+    max-width: 1100px;
+    margin: auto;
+    padding: 3rem;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    overflow-y: auto;
+    animation: fadeIn 1s;
+}
+
+h2 {
+    font-family: var(--font-title);
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+p {
+    font-size: 1.6rem;
+    text-align: justify;
+}
+
+
+.button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    background-color: var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    margin: 2rem auto;
+    border: 3px solid var(--accent-color);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
 
 footer {
     text-align: center;
     padding: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: var(--text-color);
+    background-color: var(--secondary-bg);
+    border-top: 2px solid var(--accent-color);
     font-size: 1.4rem;
-    margin-top: 2rem;
 }
 
+aside ul li a {
+    color: var(--text-color);
+    font-size: 2rem;
+    text-decoration: none;
+    transition: color .3s;
+}
 
-@media (max-width: 768px) {
-    main {
-        flex-direction: column;
+aside ul li a:hover {
+    color: var(--accent-color);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
 
-    aside {
-        justify-content: center;
-        text-align: center;
-    }
-
-    header h1 {
-        font-size: 3.6rem;
-    }
-
-    article h2 {
-        font-size: 2.4rem;
-    }
-
-    aside h2 {
-        font-size: 2rem;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
